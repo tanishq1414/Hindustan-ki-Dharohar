@@ -13,7 +13,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Background Video */
+        
         .background-video {
             position: fixed;
             top: 0;
@@ -24,7 +24,7 @@
             z-index: -1;
         }
 
-        /* Intro Page */
+        
         .intro-page {
             display: flex;
             flex-direction: column;
@@ -58,7 +58,7 @@
             transform: scale(1.1);
         }
 
-        /* Navbar Styling */
+       
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -144,6 +144,21 @@
         .hidden {
             display: none;
         }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: magenta;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -151,6 +166,12 @@
         <source src="india.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    
+    <audio id="intro-music" autoplay loop>
+        <source src="intro-music.mp3"type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
 
     <div class="intro-page" id="intro">
         <h1>Hindustan Ki Dharohar</h1>
@@ -160,6 +181,7 @@
     <nav class="navbar" id="navbar" style="display: none;">
         <div class="logo">Hindustan Ki Dharohar</div>
         <div>
+            <a href="#" onclick="showRegion('home')">Home</a>
             <a href="#" onclick="showRegion('north-india')">North India</a>
             <a href="#" onclick="showRegion('south-india')">South India</a>
             <a href="#" onclick="showRegion('east-india')">East India</a>
@@ -170,14 +192,23 @@
     </nav>
 
     <section class="content" id="content" style="display: none;">
+        <div id="home" class="region">
+            <h2>About India</h2>
+            <p>India, a land of diverse cultures, languages, and traditions, is home to one of the world's oldest civilizations. It has a rich and vibrant history that spans thousands of years. From the Indus Valley Civilization to the Vedic Age, from the grandeur of the Mauryan and Gupta Empires to the architectural marvels of the Mughal and Chola dynasties, India has been a beacon of knowledge, spirituality, and culture.</p>
+            <p>Known as the birthplace of major religions such as Hinduism, Buddhism, Jainism, and Sikhism, India has been a center of learning and spiritual enlightenment. Ancient universities like Nalanda and Takshashila attracted scholars from around the world.</p>
+            <p>The subcontinent has witnessed the rise and fall of numerous dynasties, each leaving its mark in the form of art, architecture, and culture. The intricate carvings of Khajuraho, the serene beauty of the Ajanta and Ellora caves, the majestic forts of Rajasthan, and the iconic Taj Mahal are just a few examples of India's architectural brilliance.</p>
+            <p>India's contributions to science, mathematics, and literature are unparalleled. The concept of zero, the decimal system, and significant advancements in astronomy and medicine originated here. Literary works like the Vedas, Upanishads, Mahabharata, and Ramayana continue to inspire millions.</p>
+            <p>Today, India stands as a vibrant democracy, blending its ancient heritage with modern advancements, making it a unique and dynamic nation on the global stage.</p>
+        </div>
+
         <div id="north-india" class="region hidden">
             <h2>North India</h2>
             <div class="monument">
-                <img src="tajmahal.jpg" alt="Taj Mahal">
+                <img src="tajmahal.jpeg" alt="Taj Mahal">
                 <p><strong>Taj Mahal, Agra (Uttar Pradesh)</strong> - A UNESCO World Heritage Site and symbol of love built by Mughal Emperor Shah Jahan.</p>
             </div>
             <div class="monument">
-                <img src="redfort.jpg" alt="Red Fort">
+                <img src="redfort.jpeg" alt="Red Fort">
                 <p><strong>Red Fort, Delhi</strong> - A historic fort that was the main residence of Mughal emperors.</p>
             </div>
         </div>
@@ -185,14 +216,60 @@
         <div id="south-india" class="region hidden">
             <h2>South India</h2>
             <div class="monument">
-                <img src="hampi.jpg" alt="Hampi">
+                <img src="HAMPI.jpg" alt="Hampi">
                 <p><strong>Hampi, Karnataka</strong> - A UNESCO World Heritage Site and capital of the Vijayanagara Empire.</p>
+                <div class="monument">
+                    <img src="tirupati.webp" alt="Hampi">
+                    <p><strong>Tirupati Tirumula, Andhra Pradesh</strong> -One of the astounding facts about Tirupati Temple is that it is the richest temple in India! The devotees generously offer vast amounts of cash, jewellery, property deeds, gold and even Demat shared transfers! The temple receives around 22 million INR per day as offerings..</p>
+                </div>
             </div>
         </div>
 
-        <!-- Add other regions similarly -->
+        <div id="central-india" class="region hidden">
+            <h2>Central India</h2>
+            <div class="monument">
+                <img src="mahakal.jpeg" alt="Mahakaleshwar">
+                <p><strong>Mahakaleshwar,Ujjain (Madhya Pradesh)</strong> - Mahakaleshwar Jyotirlinga is a Hindu temple dedicated to Shiva and is one of the twelve Jyotirlingas, shrines which are said to be the most sacred abodes of Shiva. It is located in the ancient city of Ujjain in the state of Madhya Pradesh, India. The temple is situated on the side of the holy river Shipra..</p>
+            </div>
+            <div class="monument">
+                <img src="sanchi.jpeg" alt="Sanchi Stupa">
+                <p><strong>Raisen , (Madhya Pradesh)</strong> - Sanchi Stupa is a Buddhist complex, famous for its Great Stupa, on a hilltop at Sanchi Town in Raisen District of the State of Madhya Pradesh, India. It is located, about 23 kilometers from Raisen town, district headquarter and 46 kilometres (29 mi) north-east of Bhopal, capital of Madhya Pradesh..</p>
+            </div>
+        </div>
+        
+
+        <div id="east-india" class="region hidden">
+            <h2>Central India</h2>
+            <div class="monument">
+                <img src="konark.jpeg" alt="konark sun temple">
+                <p><strong>Mahakaleshwar,Ujjain (Madhya Pradesh)</strong> - Mahakaleshwar Jyotirlinga is a Hindu temple dedicated to Shiva and is one of the twelve Jyotirlingas, shrines which are said to be the most sacred abodes of Shiva. It is located in the ancient city of Ujjain in the state of Madhya Pradesh, India. The temple is situated on the side of the holy river Shipra..</p>
+            </div>
+            <div class="monument">
+                <img src="jay jagannath.jpeg" alt="Jagannath Temple">
+                <p><strong>Puri , (Orissa)</strong> -  As one of the Char-Dham Pilgrimages, the shrine is extremely important to Hindu followers. It also acts as a massive historical tower created in the year 1078, millennia ago. Thousands of people travel to Odisha each year to seek Lord Jagannath's graces...</p>
+            </div>
+        </div>
+        
+
+        <div id="northeast-india" class="region hidden">
+            <h2>Central India</h2>
+            <div class="monument">
+                <img src="kamakhya devi.jpeg" alt="Kamakhya Devi Temple">
+                <p><strong>Kamakhya, Guwahati, Assam</strong> - The Kamakhya Temple at Nilachal hills in Guwahati, Assam is one of the oldest and most revered centres of Tantric practices, dedicated to the goddess Kamakhya. The temple is the center of the Kulachara Tantra Marga and the site of the Ambubachi Mela, an annual festival that celebrates the menstruation of the goddess.</p>
+            </div>
+            <div class="monument">
+                <img src="ujjan.jpeg" alt="Jagannath Temple">
+                <p><strong>Palace Compound, Indranagar, Agartala, Tripura</strong> -  Ujjayanta Palace is the state museum of the Indian state of Tripura and former royal palace of the princely state of Tripura. It was built by Maharaja Radha Kishore Manikya in 1901. It housed the State Legislative Assembly between 1973 and 2011...</p>
+            </div>
+        </div>
+
+        
 
     </section>
+    <footer class="footer">
+        Designed by <a href="#">Piyush Bharat</a>
+    </footer>
+
 
     <script>
         function explorePage() {
